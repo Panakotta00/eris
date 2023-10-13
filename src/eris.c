@@ -677,28 +677,31 @@ read_uint8_t(Info *info) {
 
 static uint16_t
 read_uint16_t(Info *info) {
-  return  (uint16_t)read_uint8_t(info) |
-         ((uint16_t)read_uint8_t(info) << 8);
+  uint16_t v = (uint16_t)read_uint8_t(info);
+  v |= ((uint16_t)read_uint8_t(info) << 8);
+  return v;
 }
 
 static uint32_t
 read_uint32_t(Info *info) {
-  return  (uint32_t)read_uint8_t(info) |
-         ((uint32_t)read_uint8_t(info) << 8) |
-         ((uint32_t)read_uint8_t(info) << 16) |
-         ((uint32_t)read_uint8_t(info) << 24);
+  uint32_t v = (uint32_t)read_uint8_t(info);
+  v |= ((uint32_t)read_uint8_t(info) << 8);
+  v |= ((uint32_t)read_uint8_t(info) << 16);
+  v |= ((uint32_t)read_uint8_t(info) << 24);
+  return v;
 }
 
 static uint64_t
 read_uint64_t(Info *info) {
-  return  (uint64_t)read_uint8_t(info) |
-         ((uint64_t)read_uint8_t(info) << 8) |
-         ((uint64_t)read_uint8_t(info) << 16) |
-         ((uint64_t)read_uint8_t(info) << 24) |
-         ((uint64_t)read_uint8_t(info) << 32) |
-         ((uint64_t)read_uint8_t(info) << 40) |
-         ((uint64_t)read_uint8_t(info) << 48) |
-         ((uint64_t)read_uint8_t(info) << 56);
+  uint64_t v = (uint64_t)read_uint8_t(info);
+  v |= ((uint64_t)read_uint8_t(info) << 8);
+  v |= ((uint64_t)read_uint8_t(info) << 16);
+  v |= ((uint64_t)read_uint8_t(info) << 24);
+  v |= ((uint64_t)read_uint8_t(info) << 32);
+  v |= ((uint64_t)read_uint8_t(info) << 40);
+  v |= ((uint64_t)read_uint8_t(info) << 48);
+  v |= ((uint64_t)read_uint8_t(info) << 56);
+  return v;
 }
 
 static int8_t
