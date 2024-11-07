@@ -1841,7 +1841,7 @@ p_thread(Info *info) {                                          /* ... thread */
 
     eris_assert(eris_isLua(ci) || (ci->callstatus & CIST_TAIL) == 0);
     if (ci->callstatus & CIST_HOOKYIELD) {
-      eris_error(info, ERIS_ERR_HOOK);
+      //eris_error(info, ERIS_ERR_HOOK);
     }
 
     if (eris_isLua(ci)) {
