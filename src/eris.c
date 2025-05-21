@@ -1963,7 +1963,7 @@ u_thread(Info *info) {                                                 /* ... */
   eris_assert(thread->hook == NULL);
 
   /* See comment in persist. */
-  thread->oldpc = NULL;
+  thread->oldpc = (int)NULL;
 
   /* Read general information. */
   thread->status = READ_VALUE(uint8_t);
